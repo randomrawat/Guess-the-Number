@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+      @layer utilities {
+          .font-pixel {
+              font-family: 'Press Start 2P', sans-serif;
+          }
+      }
+  </style>
+    <title>Guess My Number!</title>
+    
+  </head>
+  <body class="bg-gray-400">
+    <div id="back" class="bg-[#282828] max-w-[750px] min-h-screen mx-auto p-6">
+      <nav class="flex sm:flex-row justify-between items-center mb-6">
+        <div class="mb-4 sm:mb-0">
+          <button id="again" onclick="againn()" class="p-2 px-3 bg-white text-gray-700 font-pixel font-bold text-2xl sm:text-4xl rounded">Again!</button>
+        </div>
+        <div>
+          <p class="text-white font-bold text-xl sm:text-3xl text-center sm:text-right">&#10092 Between 1 and 20 &#10093</p>
+        </div>
+      </nav>
+
+      <h1 class=" text-white font-bold text-4xl sm:text-5xl font-pixel text-center mt-2 sm:mt-14 mb-4 ">
+        Guess My Number!
+      </h1>
+
+      <div class="relative mb-8">
+        <div class="w-full h-1 bg-white mt-20 sm:mt-24"></div>
+        <div id="mark" class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex w-24 h-24 sm:w-28  sm:h-28 justify-center items-center text-gray-700 font-extrabold font-pixel text-5xl bg-white rounded">
+          ?
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg mt-24 mx-auto">
+        <div class="flex justify-center">
+          <input type="number" id="input" class="border-2 border-white h-16 w-full max-w-[140px] text-black font-bold text-xl text-center rounded" placeholder="Enter a no." />
+        </div>
+        <div id="gss" class="text-white font-bold text-xl sm:text-2xl text-center sm:text-left">Start guessing. . .</div>
+        <button type="submit" onclick="handleSubmit()" class="col-span-1 sm:col-span-2 mx-auto font-bold text-xl bg-white text-gray-700 h-12 w-32 flex items-center justify-center rounded">Check!</button>
+        
+        <div class="col-span-1 sm:col-span-2 flex flex-col justify-center items-center gap-4">
+          <h2 id="scorediv" class="flex text-white font-bold text-xl sm:text-2xl">
+            Score: <span id="score" class="ml-2">20</span>
+          </h2>
+          <h2 id="highscorediv" class="flex text-white font-bold text-xl sm:text-2xl">
+            High Score: <span id="highscore" class="ml-2">0</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
